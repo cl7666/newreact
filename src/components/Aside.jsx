@@ -9,11 +9,10 @@ export default function Aside() {
     const [defaultKey,setDefaultKey] = useState('')
 
     useEffect(()=>{
-        let path = location.pathname
+        let path = location.pathname;
         let key = path.split('/')[1];
         setDefaultKey(key)
     },[location.pathname])
-
     const handleClick = e => {
         navigate('/' + e.key)
         setDefaultKey(e.key)
